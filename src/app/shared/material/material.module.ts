@@ -5,6 +5,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -16,14 +17,16 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     MatTableModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   exports:[
     MatInputModule,
     MatIconModule,
     MatTableModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
     
   ]
 })
