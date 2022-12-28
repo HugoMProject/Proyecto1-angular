@@ -1,14 +1,17 @@
-<mat-form-field >
-<mat-form-field appearance="fill">
-    <mat-label>Nombre del Producto</mat-label>
-    <input matInput>
+
+<form  (ngSubmit)="guardar()" class="mb-3">
+  <div class="container">
+    <h2>Añadir Nuevo Producto</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre del Producto</mat-label>
+      <input matInput>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>tipo de servicio</mat-label>
     <input matInput>
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>precio</mat-label>
+    <mat-label>Precio</mat-label>
     <input matInput>
   </mat-form-field>
   <mat-form-field appearance="fill">
@@ -17,7 +20,9 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Descripcion</mat-label>
-    <textarea matInput></textarea>
+    <textarea placeholder="Descripcion maximo de 200 caracteres" matInput></textarea>
   </mat-form-field>
-  <button mat-button color="primary">Primary</button>
-</mat-form-field>
+  <button mat-raised-button  color="primary">Añadir</button>
+  </div>
+ 
+</form>

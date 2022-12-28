@@ -13,4 +13,7 @@ export class FormLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  guardar(){
+    console.log('estas tratando de iniciar seccion....')
+  }
 }

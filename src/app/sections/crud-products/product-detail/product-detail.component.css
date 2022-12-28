@@ -1,0 +1,24 @@
+.conteiner{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 90%;
+    height: 500px;
+}
+.conteinerOff{
+    display: none;
+}
+h2{
+    text-align: center;
+    font-size: 40px;
+    font-family: inherit;
+}
+.example-card {
+    max-width: 600px;
+    margin-left: 25%;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  

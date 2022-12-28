@@ -9,7 +9,11 @@ export class AddProductComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
+    guardar(){
+      console.log('guardado exitosamente')
+    }
+  
 
 }

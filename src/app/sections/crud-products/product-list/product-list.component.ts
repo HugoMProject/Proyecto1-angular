@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/shared/products.service';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -23,11 +24,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-
+export class ProductListComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol',];
   dataSource = ELEMENT_DATA;
-  constructor() { }
 
+  constructor(public _productsService:ProductsService) { }
+
+  ngOnInit(){
+    this._productsService.getAllProducts().subscribe(data=>{console.log(data)})
+  }
+    
 
 }

@@ -1,3 +1,6 @@
+
+<div class="divConteinerTable">
+  <h2 >Lista de Productos</h2>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 container">
 
     <!--- Note that these columns can be defined in any order.
@@ -30,3 +33,9 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" href="#">Ver Productos</button>
+    <button mat-raised-button color="Accent" href="#">Añadir Producto</button>
+    <button mat-raised-button color="warn" href="#">Eliminar Producto</button>
+  </div>
+</div>
