@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaderResponse  } from '@angular/common/http';
 import { productList } from '../models/productList.interface';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -12,5 +12,9 @@ export class ProductsService {
   getAllProducts():Observable<productList[]>{
   return this.http.get<productList[]>(`${this.urlAPI}product`)
   };
+
+  deleteOneProduct(id:number):Observable<productList>{
+    return this.http.delete<productList>(`${this.urlAPI}delete/product/${id}`)
+  }
    
 }

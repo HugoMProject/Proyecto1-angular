@@ -1,4 +1,6 @@
+
 .example-spacer {
+  width: 100%;
     background-color: #e6e6e6;
     flex-direction: row;
     justify-content: space-between;
@@ -11,8 +13,12 @@
 
 .example-button-row {
     margin-right: 2%;
-    display: table-cell;
-    max-width: 600px;
+    display: inline-block;
+    padding: 10px;
+  }
+  .btn{
+    margin-left: 3px;
+    margin-right: 3px;
   }
   
   .example-button-row .mat-mdc-button-base {

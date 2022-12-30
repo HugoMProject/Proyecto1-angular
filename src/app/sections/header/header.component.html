@@ -2,10 +2,10 @@
     <mat-toolbar class="example-spacer">
       <span class="panel">Panel De Control</span>
       <div class="example-button-row">
-        <button mat-raised-button>Basic</button>
-        <button mat-raised-button color="primary" routerLink="/list">Ver Productos</button>
-        <button mat-raised-button color="Accent" routerLink="/add">Añadir Producto</button>
-        <button mat-raised-button color="warn" routerLink="">Eliminar Producto</button>
+        <button mat-raised-button class="btn1 btn"color="primary"(click)="showProducts()">Ver Productos</button>
+        <button mat-raised-button class="btn2 btn" color="primary" (click)="upDate()">Añadir Producto</button>
+        <button mat-raised-button class="btn3 btn" color="warn" (click)="deleteAllProducts()">Eliminar Todo</button>
+        <button mat-raised-button class="btn3 btn" color="basic" (click)="seccionOff()">Salir</button>
       </div>
     </mat-toolbar>
   </p>

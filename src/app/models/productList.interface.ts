@@ -1,8 +1,7 @@
 export interface productList {
-
+    id:number;
     productName:string;
-    price:string;
+    price:number;
     description:string;
-    stock:string;
     
 }
