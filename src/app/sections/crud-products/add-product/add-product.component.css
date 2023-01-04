@@ -26,8 +26,17 @@ h2{
 }
 .mat-raised-button{
   left: 40%;
-  right: 40%;
-  width: 200px;
+  width: 100px;
+}
+@media (max-width:500px) {
+  .mat-raised-button{
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 40px;
+    left: 40%;
+
+  }
+  
 }
 
 :host {

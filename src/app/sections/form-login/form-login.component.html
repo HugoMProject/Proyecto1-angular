@@ -1,3 +1,5 @@
+<h1>Bienvenido Admin</h1>
+<h3>Inicie seccion para continuar...</h3>
 <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
   <div class="mat-elevation-z8 mat-form-field container block">
     <div class="example-container">
@@ -5,14 +7,15 @@
       <mat-form-field appearance="fill" class="example-full-width">
         <mat-label>Agregar el correo</mat-label>
         <input matInput placeholder="pat@example.com" formControlName="email" required>
-        <mat-error >Email o Contraseña esta Incorrecta</mat-error>
+        <mat-error >Agrega un email valido</mat-error>
       </mat-form-field>
       <br>
       <mat-form-field appearance="fill" class="example-full-width">
           <mat-label>Contraseña</mat-label>
           <input type="password" autocomplete="username" matInput formControlName="password">
-          <mat-error >Email o Contraseña esta Incorrecta</mat-error>
+          <mat-error >Agrega una contraseña valida</mat-error>
         </mat-form-field><br><br>
+        
         <button mat-raised-button color="primary">Enviar</button>
     </div>
   </div>

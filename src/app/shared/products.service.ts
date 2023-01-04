@@ -12,9 +12,11 @@ export class ProductsService {
   getAllProducts():Observable<productList[]>{
   return this.http.get<productList[]>(`${this.urlAPI}product`)
   };
+  createProduct(){};
+  updateProduct(id:string){};
 
-  deleteOneProduct(id:number):Observable<productList>{
+  deleteOneProduct(id:string):Observable<productList>{
     return this.http.delete<productList>(`${this.urlAPI}delete/product/${id}`)
-  }
+  };
    
 }

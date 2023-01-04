@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
     //alertas antes de cerrar seccion
     var result = window.confirm('Estas seguro que quieres salir?...');
     if (result === true) {
-        window.alert('Okay, si estas seguro!... hasta Luego.');
+        this.router.navigate(['login'])
     }
   }
 

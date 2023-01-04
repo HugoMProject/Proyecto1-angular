@@ -3,5 +3,7 @@ export interface productList {
     productName:string;
     price:number;
     description:string;
+    stock:number;
+    img:string;
     
 }
