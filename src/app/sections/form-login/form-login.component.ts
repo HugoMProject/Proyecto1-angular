@@ -20,15 +20,14 @@ export class FormLoginComponent implements OnInit {
   constructor(private UserApi:AuthService, private router:Router) { }
 
   ngOnInit(): void {
+    this.UserApi.estalogeado()
   }
   //controlador del login
   onLogin(form:any){
 
-    this.UserApi.loginByEmail(form).subscribe(data => {
-      
-      console.log(this.UserApi.getToken())
-      // this.UserApi.setToken(data.token);
-      // this.router.navigate(['/list']);
-    });
+    this.UserApi.loginByEmail(form).subscribe(data=>{
+      this.UserApi.setToken(data)
+      this.router.navigate(['list'])
+      })
   }
 }

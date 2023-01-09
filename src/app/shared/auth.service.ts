@@ -3,43 +3,50 @@ import { HttpClient, HttpHeaderResponse  } from '@angular/common/http';
 import { loginInterfece } from '../models/login.interfece';
 import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-token?:string;
+token?:any;
   url:string = 'http://localhost:3000/api/'
-  constructor(private http:HttpClient, private cookies:CookieService) { }
+  constructor(private http:HttpClient, private cookies:CookieService, private router:Router) { }
   
 //funcion para auntenticar al usario
-  loginByEmail(form:any):Observable<loginInterfece>{
-    let direction = this.url + 'login'
-    return this.http.post<loginInterfece>(direction,form)
+  // Función para autenticar al usuario
+  loginByEmail(form:loginInterfece): Observable<any> {
+    const direction = this.url + 'login/auth';
+    return this.http.post<any>(direction, form);
   }
-
-  //set cookie
-  setToken(token: any) {
-    this.token = token
-    this.cookies.set("token",token);
+  // Establecer cookie
+  setToken(Token:any) {
+    this.token = Token;
+                    // nombre, dato aguardar , expiracion 24hs
+    return this.cookies.set("token", Token , 1);
+    
   }
+  // Obtener cookie
   getToken() {
-    return this.cookies.get("token");
+    return this.cookies.get("token")
   }
 
+  estalogeado(){
+    let token = this.cookies.check("token")
+    console.log(token)
+    if(token === false){
+      return this.router.navigate(["login"])
+        }else{
+        return this.router.navigate(["list"])
+        
+      }
+  }
+  logOut(){
 
+    this.cookies.delete("token")
+    // window.location.reload ();
+    this.router.navigate(['login'])
 
-  
-  login(email: string, password: string) {
-    // Envía una solicitud de autenticación al servidor
-    this.http.post<{ token: string }>('login', { email, password }).subscribe(response => {
-      // Almacena el token en una cookie
-      this.cookies.set('token', response.token);
-      // Utiliza el token para autenticar futuras solicitudes
-      this.http.get('/api/protected').subscribe(response => {
-        console.log(response);
-      });
-    });
+        
+      }
   }
 
-
-}
