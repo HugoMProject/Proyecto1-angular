@@ -9,11 +9,20 @@ import { Observable } from 'rxjs';
 export class VigilanteGuard implements CanActivate {
 
   constructor(private cookieService:CookieService, private router:Router){}
+  //si no esta logeado lo mandamos al login
+  redirection(flag:boolean){
+    if(!flag){
+        this.router.navigate(['login'])
+    }
+  }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+     const cookie = this.cookieService.check('token')
+      this.redirection(cookie)
+      //este return me bloqueara o me dejara pasar
+      return cookie;
   }
   
 }

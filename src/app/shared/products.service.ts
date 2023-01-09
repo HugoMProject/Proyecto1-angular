@@ -12,6 +12,9 @@ export class ProductsService {
   getAllProducts():Observable<productList[]>{
   return this.http.get<productList[]>(`${this.urlAPI}product`)
   };
+  getOneProduct(id:string):Observable<productList[]>{
+  return this.http.get<productList[]>(`${this.urlAPI}getone/product/${id}`)
+  };
   createProduct(){};
   updateProduct(id:string){};
 

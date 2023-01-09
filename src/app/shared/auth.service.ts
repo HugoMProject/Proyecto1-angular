@@ -22,30 +22,17 @@ token?:any;
   setToken(Token:any) {
     this.token = Token;
                     // nombre, dato aguardar , expiracion 24hs
-    return this.cookies.set("token", Token , 1);
-    
+     this.cookies.set("token", Token , 1,'/');
+    return this.router.navigate(['list'])
   }
   // Obtener cookie
   getToken() {
     return this.cookies.get("token")
   }
-
-  estalogeado(){
-    let token = this.cookies.check("token")
-    console.log(token)
-    if(token === false){
-      return this.router.navigate(["login"])
-        }else{
-        return this.router.navigate(["list"])
-        
-      }
-  }
   logOut(){
 
     this.cookies.delete("token")
-    // window.location.reload ();
-    this.router.navigate(['login'])
-
+    window.location.reload ();
         
       }
   }

@@ -36,6 +36,7 @@ export class HeaderComponent implements OnInit {
         var resultado = window.confirm('Estas seguro que quieres eliminar todo los productos?...');
     if (resultado === true) {
         window.alert('Okay, si estas seguro eliminamos todos los productos...');
+        console.log('todos los productos fueron eliminados de la base de datos')
     }
    
   }

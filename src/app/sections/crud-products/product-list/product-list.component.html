@@ -7,6 +7,7 @@
                     <th class="tittle" scope="col">NOMBRE DE PRODUCTO</th>
                     <th class="tittle" scope="col">PRECIO</th>
                     <th class="tittle" scope="col">DESCRIPCION</th>
+                    <th class="tittle" scope="col">VER MAS</th>
                     <th class="tittle" scope="col">ELIMINAR</th>
                 </tr>
             </thead>
@@ -18,12 +19,18 @@
                         <td>{{ product.price }}</td>
                         <td>{{ product.description }}</td>
                         <td>
-                            <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" (click)="deleteOneProduct(product.id)">
+                            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" (click)="seeMore(product.id)">
+                                    <mat-icon>menu</mat-icon>
+                            </button>
+                            
+                        </td>
+                        <td>
+                            <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon" (click)="deleteOneProduct(product.id)">
                                     <mat-icon>delete</mat-icon>
                             </button>
                             
-                    </td>
-                    
+                        </td>
+                </tr>
                     
             </tbody>
         </table>

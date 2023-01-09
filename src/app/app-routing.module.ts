@@ -4,13 +4,15 @@ import { AddProductComponent } from './sections/crud-products/add-product/add-pr
 import { ProductDetailComponent } from './sections/crud-products/product-detail/product-detail.component';
 import { ProductListComponent } from './sections/crud-products/product-list/product-list.component';
 import { FormLoginComponent } from './sections/form-login/form-login.component';
-//declaramos la rutas de cada co ponente
+// con el vigilante protegemos las rutas para los usuarios que no esten logeados
+import { VigilanteGuard } from './shared/vigilante.guard';
+//declaramos la rutas de cada componente
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
   {path:'login', component: FormLoginComponent},
-  {path:'list', component: ProductListComponent},
-  {path:'add',component: AddProductComponent},
-  {path:'product-detail',component: ProductDetailComponent}
+  {path:'list', component: ProductListComponent,canActivate:[VigilanteGuard]},
+  {path:'add',component: AddProductComponent,canActivate:[VigilanteGuard]},
+  {path:'product-detail',component: ProductDetailComponent,canActivate:[VigilanteGuard]}
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/shared/products.service';
 import { productList } from 'src/app/models/productList.interface';
-
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @Component({
   selector: 'app-product-list',
@@ -9,10 +9,7 @@ import { productList } from 'src/app/models/productList.interface';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  //Definimos las dos propiedades que se inicializan los titulos y las filas de la componente:
-//Guardamos en un atributo la referencia del método keys del objeto 'Object', para usarlo luego en la plantilla
   products?:productList[];
-
 
   constructor(public _productsService:ProductsService) { }
     //CRUD PRODUCTOS
@@ -48,7 +45,9 @@ export class ProductListComponent implements OnInit {
     }else{(error:any)=>{
       console.log(error);
     }}
-      
-    };
-
+  };
+  //ver detalle de producto
+  seeMore(id:any){
+    console.log(`Este es el id del producto seleccionado ===> ${id}`)
+  }
 }
