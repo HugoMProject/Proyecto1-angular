@@ -22,9 +22,10 @@ export class FormLoginComponent implements OnInit {
   ngOnInit(): void {}
   //controlador del login
   onLogin(form:any){
-
-    this.UserApi.loginByEmail(form).subscribe(data=>{
-      this.UserApi.setToken(data)
+//obtenemos los datos del formulario de login y seteamos el token como cookie
+    this.UserApi.loginByEmail(form).subscribe((data)=>{
+      console.log(data.token)
+      this.UserApi.setToken(data.token)
       })
   }
 }

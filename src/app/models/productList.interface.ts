@@ -1,9 +1,9 @@
 export interface productList {
-    id:number;
+    id?:number;
     productName:string;
     price:number;
     description:string;
     stock:number;
-    img:string;
+    img?:string;
     
 }

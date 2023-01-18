@@ -15,9 +15,11 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
     CRUDProductsModule,
     MaterialModule
   ],
-  exports:[CRUDProductsModule,
+  exports:[
+    CRUDProductsModule,
   HeaderComponent,
-FormLoginComponent]
+  FormLoginComponent
+]
 
 })
 export class SectionModule { }

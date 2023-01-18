@@ -1,7 +1,7 @@
 .divConteinerTable{
   display: flex;
   flex-direction: column;
-  margin-bottom: 200px;
+  margin-bottom: 250px;
   margin-top: 20px;
   background-color: white;
   
@@ -38,6 +38,7 @@ h2{
     text-align: center;
   }
   .divConteinerTable .table tbody tr td{
-    padding: 2px;
+    max-width: 100%;
+    padding: 3px;
     text-align: center;
   }

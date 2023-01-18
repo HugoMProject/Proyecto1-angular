@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/shared/products.service';
 import { productList } from 'src/app/models/productList.interface';
-import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @Component({
   selector: 'app-product-list',
@@ -49,5 +48,16 @@ export class ProductListComponent implements OnInit {
   //ver detalle de producto
   seeMore(id:any){
     console.log(`Este es el id del producto seleccionado ===> ${id}`)
+ 
+  }
+
+  deleteAllProducts(){
+    //alertas antes de elimimnar
+        var resultado = window.confirm('Estas seguro que quieres eliminar todo los productos?...');
+    if (resultado === true) {
+        this._productsService.deleteAllProduct()
+        console.log('todos los productos fueron eliminados de la base de datos')
+    }
+   
   }
 }

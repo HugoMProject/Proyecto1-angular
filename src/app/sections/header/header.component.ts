@@ -12,8 +12,7 @@ export class HeaderComponent implements OnInit {
   headerProduct?:productList[];
   constructor(private _productList:ProductsService, private router:Router, private _authservice:AuthService) { }
 
-  ngOnInit(): void { }
-  seccionOff(){
+  ngOnInit(): void { }  seccionOff(){
     //alertas antes de cerrar seccion
     var result = window.confirm('Estas seguro que quieres salir?...');
     if (result === true) {
@@ -31,14 +30,6 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['add'])
   }
 
-  deleteAllProducts(){
-    //alertas antes de elimimnar
-        var resultado = window.confirm('Estas seguro que quieres eliminar todo los productos?...');
-    if (resultado === true) {
-        window.alert('Okay, si estas seguro eliminamos todos los productos...');
-        console.log('todos los productos fueron eliminados de la base de datos')
-    }
-   
-  }
+
 
 }

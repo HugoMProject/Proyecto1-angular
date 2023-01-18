@@ -12,10 +12,10 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  seeMore(id:any){
-    // this._productsService.getOneProduct(id).subscribe(data=>{
-    //   this.product = data
-    // })
+  seeMoreProduct(id:any){
+    this._productsService.getOneProduct(id).subscribe(data=>{
+      this.product = data
+    })
   }
  
 }

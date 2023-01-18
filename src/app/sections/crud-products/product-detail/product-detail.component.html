@@ -1,8 +1,8 @@
 <div class="conteiner">
     <h2>Detalle de Producto</h2>
     <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title>Nombre del Producto</mat-card-title>
+        <mat-card-header *ngFor="let detailProduct of product">
+          <mat-card-title>{{detailProduct.productName}}</mat-card-title>
           <mat-card-subtitle>tipo de Producto</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
