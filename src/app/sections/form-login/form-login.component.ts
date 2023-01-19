@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/auth.service';
-import { loginInterfece } from 'src/app/models/login.interfece';
-import { Router } from '@angular/router';
 @Component({
   selector: 'app-form-login',
   templateUrl: './form-login.component.html',
@@ -17,14 +15,13 @@ export class FormLoginComponent implements OnInit {
     password: new FormControl('',Validators.required)
   })
 
-  constructor(private UserApi:AuthService, private router:Router) { }
+  constructor(private UserApi:AuthService) { }
 
   ngOnInit(): void {}
   //controlador del login
   onLogin(form:any){
 //obtenemos los datos del formulario de login y seteamos el token como cookie
     this.UserApi.loginByEmail(form).subscribe((data)=>{
-      console.log(data.token)
       this.UserApi.setToken(data.token)
       })
   }

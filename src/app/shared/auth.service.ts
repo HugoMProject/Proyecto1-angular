@@ -31,9 +31,8 @@ token?:any;
   }
   logOut(){
 
-    this.cookies.delete("token")
-    window.location.reload ();
-        
+    this.cookies.delete("token");
+    window.location.reload();    
       }
   }
 

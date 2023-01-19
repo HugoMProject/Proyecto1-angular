@@ -12,14 +12,14 @@ export class HeaderComponent implements OnInit {
   headerProduct?:productList[];
   constructor(private _productList:ProductsService, private router:Router, private _authservice:AuthService) { }
 
-  ngOnInit(): void { }  seccionOff(){
+  ngOnInit(): void { }  
+  seccionOff(){
     //alertas antes de cerrar seccion
     var result = window.confirm('Estas seguro que quieres salir?...');
     if (result === true) {
       //si acepta usamos la funcion para eliminar la cookie de session y lo reedirigimos al 
       //la vista de login 
-      this._authservice.logOut()
-        this.router.navigate(['login'])
+      this._authservice.logOut();
     }
   }
 
