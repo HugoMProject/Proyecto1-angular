@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'login', component: FormLoginComponent},
   {path:'list', component: ProductListComponent,canActivate:[VigilanteGuard]},
   {path:'add',component: AddProductComponent,canActivate:[VigilanteGuard]},
-  {path:'product-detail',component: ProductDetailComponent,canActivate:[VigilanteGuard]}
+  {path:'product-detail/:id',component: ProductDetailComponent,canActivate:[VigilanteGuard]}
 ];
 
 @NgModule({

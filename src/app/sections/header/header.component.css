@@ -1,39 +1,70 @@
-
-.example-spacer {
-  width: 100%;
-    background-color: #e6e6e6;
-    flex-direction: row;
-    justify-content: space-between;
+@media (max-width:799px) {
+  #btnOnlyMobile{
+    display: block;
+    border: 0.1px solid rgb(255, 245, 245) ;
+    border-radius: 30px;
+    box-shadow: 1px 1px 2px 2px;
   }
-
-.panel{
-    margin-left: 2%;
-    font-size: 35px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-  }
-
-.example-button-row {
-    margin-right: 2%;
-    display: inline-block;
-    padding: 10px;
-  }
-  .btn{
-    margin-left: 3px;
-    margin-right: 3px;
-  }
+  .example-spacer {
+    width: 100%;
+      background-color: #e6e6e6;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   
-  .example-button-row .mat-mdc-button-base {
-    margin: 8px 8px 8px 0;
-  }
+  .panel{
+      margin-left: 2%;
+      font-size: 25px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
   
-  .example-flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  .example-button-row {
+      display: none;
+
+    }
+}
+
+/* Desptok*/
+@media (min-width:800px) {
+  #btnOnlyMobile{
+    display: none;
   }
+  .example-spacer {
+    width: 100%;
+      background-color: #e6e6e6;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   
-  .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-  }
+  .panel{
+      margin-left: 2%;
+      font-size: 35px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  
+  .example-button-row {
+      margin-right: 2%;
+      display: inline-block;
+      padding: 10px;
+    }
+    .btn{
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+    
+    .example-button-row .mat-mdc-button-base {
+      margin: 8px 8px 8px 0;
+    }
+    
+    .example-flex-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .example-button-container {
+      display: flex;
+      justify-content: center;
+      width: 120px;
+    }
+}

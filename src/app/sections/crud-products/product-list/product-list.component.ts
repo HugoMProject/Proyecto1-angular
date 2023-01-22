@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/shared/products.service';
 import { productList } from 'src/app/models/productList.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +11,7 @@ import { productList } from 'src/app/models/productList.interface';
 export class ProductListComponent implements OnInit {
   products?:productList[];
 
-  constructor(public _productsService:ProductsService) { }
+  constructor(public _productsService:ProductsService, private router:Router) { }
     //CRUD PRODUCTOS
   ngOnInit(){
     this.getAll();
@@ -47,7 +48,8 @@ export class ProductListComponent implements OnInit {
   };
   //ver detalle de producto
   seeMore(id:any){
-    console.log(`Este es el id del producto seleccionado ===> ${id}`)
+    // console.log(`Este es el id del producto seleccionado ===> ${id}`);
+    this.router.navigate([`product-detail/${id}`]);
  
   }
 

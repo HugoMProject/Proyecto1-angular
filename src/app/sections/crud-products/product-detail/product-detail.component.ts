@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { productList } from 'src/app/models/productList.interface';
 import { ProductsService } from 'src/app/shared/products.service';
 @Component({
@@ -7,15 +8,28 @@ import { ProductsService } from 'src/app/shared/products.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  product?:productList[];
-  constructor(public _productsService:ProductsService) { }
+  oneProduct? = {
+    productName:'',
+    price:'',
+    description:'',
+    stock:'',
+};
+  constructor(public _productsService:ProductsService, public activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.seeMoreProduct();
   }
-  seeMoreProduct(id:any){
-    this._productsService.getOneProduct(id).subscribe(data=>{
-      this.product = data
-    })
+  seeMoreProduct(){
+    //obtenemos de la url el parametro del id y lo pasamos como argumento en la funcion
+    //para poder traer loss datos de ese id.
+    this.activatedRoute.params.subscribe(params => {
+      const id: number = params['id'] || null;
+      console.log(id)
+      this._productsService.getOneProduct(id).subscribe(data=>{
+        this.oneProduct = data;
+        console.log(this.oneProduct)
+      })
+    });
   }
  
 }

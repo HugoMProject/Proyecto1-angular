@@ -1,6 +1,20 @@
 <p>
     <mat-toolbar class="example-spacer">
       <span class="panel">Panel De Control</span>
+      <button id="btnOnlyMobile" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="showProducts()">
+          <span>Ver Productos</span>
+        </button>
+        <button mat-menu-item (click)="upDate()">
+          <span>Añadir Producto</span>
+        </button>
+        <button mat-menu-item (click)="seccionOff()">
+          <span>Salir</span>
+        </button>
+      </mat-menu>
       <div class="example-button-row">
         <button mat-raised-button class="btn1 btn"color="primary"(click)="showProducts()">Ver Productos</button>
         <button mat-raised-button class="btn2 btn" color="primary" (click)="upDate()">Añadir Producto</button>

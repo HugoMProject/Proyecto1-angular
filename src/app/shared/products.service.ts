@@ -12,8 +12,8 @@ export class ProductsService {
   getAllProducts():Observable<productList[]>{
   return this.http.get<productList[]>(`${this.urlAPI}product`)
   };
-  getOneProduct(id:string):Observable<productList[]>{
-  return this.http.get<productList[]>(`${this.urlAPI}getone/product/${id}`)
+  getOneProduct(id:any):Observable<any>{
+  return this.http.get<any>(`${this.urlAPI}getone/product/${id}`)
   };
   createProduct(form:productList):Observable<productList>{
     return this.http.post<productList>(`${this.urlAPI}create/product`,form)
@@ -29,6 +29,12 @@ export class ProductsService {
     return this.http.delete<productList>(`${this.urlAPI}deleteAll/product`)
   };
    
-
+ showMore(id:string){
+  let showdata = [];
+  this.getOneProduct(id).subscribe(data=>{
+    showdata = data;
+    return showdata;
+  })
+ }
 
 }
