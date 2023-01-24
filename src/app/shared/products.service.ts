@@ -6,20 +6,20 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  urlAPI = 'http://localhost:5000/api/';
+  urlAPI = 'http://localhost:3000/api/';
   constructor(private http:HttpClient) {}
 
   getAllProducts():Observable<productList[]>{
   return this.http.get<productList[]>(`${this.urlAPI}product`)
   };
-  getOneProduct(id:any):Observable<any>{
+  getOneProduct(id:string):Observable<any>{
   return this.http.get<any>(`${this.urlAPI}getone/product/${id}`)
   };
   createProduct(form:productList):Observable<productList>{
     return this.http.post<productList>(`${this.urlAPI}create/product`,form)
   };
-  updateProduct(form:productList):Observable<productList>{
-    return this.http.put<productList>(`${this.urlAPI}update/product/${form.id}`,form)
+  updateProduct(id:any,form:productList):Observable<productList>{
+    return this.http.put<productList>(`${this.urlAPI}update/product/${id}`,form)
   };
 
   deleteOneProduct(id:string):Observable<productList>{

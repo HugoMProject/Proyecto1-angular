@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ProductsService } from './shared/products.service';
 import { AuthService } from './shared/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { AuthService } from './shared/auth.service';
     AuthService,
     ProductsService,
     CookieService],
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }

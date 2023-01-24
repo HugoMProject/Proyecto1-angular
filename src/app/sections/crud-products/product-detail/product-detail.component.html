@@ -1,19 +1,19 @@
 <div class="conteiner">
     <h2>Detalle de Producto</h2>
-    <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title>{{oneProduct.productName}</mat-card-title>
+    <mat-card class="example-card"*ngFor="let Product of _product" >
+ 
+          <mat-card-title >{{Product.productName}}</mat-card-title>
           <mat-card-subtitle>tipo de Producto</mat-card-subtitle>
-        </mat-card-header>
+  
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         
           <p>Descripcion</p>
-          <p>{{product.description}</p>
-          <mat-card-subtitle>$ {{product.price}</mat-card-subtitle>
+          <p>{{Product.description}}</p>
+          <mat-card-subtitle>$ {{Product.price}}</mat-card-subtitle>
         
         <mat-card-actions>
-          <button mat-button color="warn">EDITAR PRODUCTO</button>
-          <button mat-button>SHARE</button>
+          <button mat-button color="warn">Editar</button>
+          <button mat-button (click)="regresar()">Regresar</button>
         </mat-card-actions>
       </mat-card>
     

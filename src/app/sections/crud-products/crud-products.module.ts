@@ -5,6 +5,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductListComponent } from './product-list/product-list.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { HeaderComponent } from '../header/header.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { HeaderComponent } from '../header/header.component';
     AddProductComponent,
     ProductDetailComponent,
     ProductListComponent,
+    EditProductComponent,
   ],
   imports: [
     CommonModule,
