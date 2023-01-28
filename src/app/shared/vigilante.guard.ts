@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class VigilanteGuard implements CanActivate {
-Api_URL = 'http://localhost:3000';
+Api_URL = 'https://proyecto1-production.up.railway.app/';
   constructor(private cookieService:CookieService, private router:Router, private http:HttpClient, private _authService:AuthService){}
   //si no esta logeado lo mandamos al login
   redirection(flag:boolean){

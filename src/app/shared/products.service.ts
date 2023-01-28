@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  urlAPI = 'http://localhost:3000/api/';
+  urlAPI = 'https://proyecto1-production.up.railway.app/api/';
   constructor(private http:HttpClient) {}
 
   getAllProducts():Observable<productList[]>{
