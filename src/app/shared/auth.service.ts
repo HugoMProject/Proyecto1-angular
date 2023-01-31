@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 token?:any;
-  url:string = 'https://proyecto1-production.up.railway.app/api/'
+  url:string = 'https://ecommerce-node.up.railway.app/api/'
   constructor(private http:HttpClient, private cookies:CookieService, private router:Router) { }
   
 //funcion para auntenticar al usario
