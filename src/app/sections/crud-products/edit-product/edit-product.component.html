@@ -1,27 +1,24 @@
 
 <form [formGroup]="loginForm" class="mb-3">
-    <div class="container">
-      <h2>Añadir Nuevo Producto</h2>
-      <mat-form-field appearance="fill">
-        <mat-label>Nombre del Producto</mat-label>
-        <input matInput formControlName="productName">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Precio</mat-label>
-      <input matInput formControlName="price">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>stock</mat-label>
-      <input matInput value="1" formControlName="stock">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>imagen</mat-label>
-      <input matInput placeholder="https://material.angular.io/assets/img/examples/shiba2.jpg" formControlName="img">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Descripcion</mat-label>
-      <textarea placeholder="Descripcion maximo de 200 caracteres" matInput formControlName="description"></textarea>
-    </mat-form-field>
+    <div class="container" *ngFor="let dataproduct of dataProduct">
+      <h2> Editar Producto </h2>
+ 
+        <mat-label class="label">Nombre del Producto</mat-label>
+        <input  formControlName="productName"  [value]="dataproduct.productName">
+
+      <mat-label class="label">Precio</mat-label>
+      <input  formControlName="price">
+
+
+      <mat-label class="label">Stock</mat-label>
+      <input type="number" formControlName="stock">
+
+      <mat-label class="label">Imagen</mat-label>
+      <input  placeholder="https://material.angular.io/assets/img/examples/shiba2.jpg" formControlName="img">
+
+      <mat-label class="label">Descripcion</mat-label>
+      <textarea class="textarea" placeholder="Descripcion maximo de 200 caracteres"  formControlName="description"></textarea>
+
       <div class="example-button-row">
     <button mat-raised-button  color="primary" >Guardar</button>
     <button mat-raised-button class="createBtn"(click)="ReturnList()">Cancelar</button>

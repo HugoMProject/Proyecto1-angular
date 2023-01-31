@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   showProducts(){
     this.router.navigate(['list'])
   }
-  upDate(){
+  addProduct(){
     this.router.navigate(['add'])
   }
 

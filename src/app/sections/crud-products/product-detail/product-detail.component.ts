@@ -2,13 +2,7 @@ import { Component,forwardRef, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { productList } from 'src/app/models/productList.interface';
 import { ProductsService } from 'src/app/shared/products.service';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
- interface Control_Value_Accessor {
-  writeValue(obj: any): void
-  registerOnChange(fn: any): void
-  registerOnTouched(fn: any): void
-  setDisabledState(isDisabled: boolean): void
-};
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-product-detail',
@@ -51,11 +45,11 @@ export class ProductDetailComponent implements OnInit{
     this.router.navigate(['list'])
   }
 
-  editProduct(form:productList){
+  editProduct(){
     this.activatedRoute.params.subscribe(params => {
       const id: any = params['id'] || null;
 
-      this._productsService.updateProduct(id,form)
+      this.router.navigate([`edit/${id}`])
     });
   }
 }

@@ -20,7 +20,7 @@ Api_URL = 'https://ecommerce-node.up.railway.app/';
     const headers = new HttpHeaders()
       .append('X-Requested-With', 'XMLHttpRequest')
       .append('x-access-token', token);
-    return this.http.get<boolean>(`${this.Api_URL}/protected-route`,{ headers:headers });
+    return this.http.get<boolean>(`${this.Api_URL}protected-route`,{ headers:headers });
 }
   canActivate(
     route: ActivatedRouteSnapshot,
