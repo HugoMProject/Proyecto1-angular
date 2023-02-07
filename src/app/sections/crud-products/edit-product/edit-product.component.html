@@ -1,27 +1,27 @@
 
-<form [formGroup]="loginForm" class="mb-3">
-    <div class="container" *ngFor="let dataproduct of dataProduct">
+<form [formGroup]="productForm" class="mb-3"(ngSubmit)="editProduct(productForm.value)">
+    <div class="container" >
       <h2> Editar Producto </h2>
  
         <mat-label class="label">Nombre del Producto</mat-label>
-        <input  formControlName="productName"  [value]="dataproduct.productName">
+        <input  name="productName" formControlName="productName" >
 
-      <mat-label class="label">Precio</mat-label>
-      <input  formControlName="price">
+        <mat-label class="label">Precio</mat-label>
+        <input type="number" name="price" formControlName="price">
 
 
-      <mat-label class="label">Stock</mat-label>
-      <input type="number" formControlName="stock">
+        <mat-label class="label">Stock</mat-label>
+        <input  type="number" name="stock" formControlName="stock">
 
-      <mat-label class="label">Imagen</mat-label>
-      <input  placeholder="https://material.angular.io/assets/img/examples/shiba2.jpg" formControlName="img">
+        <mat-label class="label">Imagen</mat-label>
+        <input   placeholder="Agrega la url de la imagen. Ej:https://th.bing.com/th/id/OIP.YIBUoplaZSb9MPAX4VyaQgHaE8?w=290&h=193&c=7&r=0&o=5&dpr=1.1&pid=1.7" name="img" formControlName="img">
 
-      <mat-label class="label">Descripcion</mat-label>
-      <textarea class="textarea" placeholder="Descripcion maximo de 200 caracteres"  formControlName="description"></textarea>
+        <mat-label class="label">Descripcion</mat-label>
+        <textarea class="textarea" placeholder="Descripcion maximo de 200 caracteres"  name="description" formControlName="description"></textarea>
 
       <div class="example-button-row">
-    <button mat-raised-button  color="primary" >Guardar</button>
-    <button mat-raised-button class="createBtn"(click)="ReturnList()">Cancelar</button>
+    <button mat-raised-button  color="primary">Guardar</button>
+    <button mat-raised-button class="createBtn"(click)="ReturnList()">Regresar</button>
   </div>
   </div>
   

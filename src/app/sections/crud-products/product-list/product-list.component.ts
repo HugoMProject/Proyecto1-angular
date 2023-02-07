@@ -20,6 +20,7 @@ export class ProductListComponent implements OnInit {
   getAll(){
     this._productsService.getAllProducts().subscribe(data=>{
       this.products = data
+      // window.location.reload();
     })
     
   };
@@ -52,14 +53,5 @@ export class ProductListComponent implements OnInit {
     this.router.navigate([`product-detail/${id}`]);
  
   }
-
-  deleteAllProducts(){
-    //alertas antes de elimimnar
-        var resultado = window.confirm('Estas seguro que quieres eliminar todo los productos?...');
-    if (resultado === true) {
-        this._productsService.deleteAllProduct()
-        console.log('todos los productos fueron eliminados de la base de datos')
-    }
-   
-  }
+ 
 }

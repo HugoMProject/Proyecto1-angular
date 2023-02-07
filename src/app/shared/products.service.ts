@@ -18,23 +18,14 @@ export class ProductsService {
   createProduct(form:productList):Observable<productList>{
     return this.http.post<productList>(`${this.urlAPI}create/product`,form)
   };
-  updateProduct(id:any,form:productList):Observable<productList>{
+  updateProduct(id:string,form:productList):Observable<productList>{
     return this.http.put<productList>(`${this.urlAPI}update/product/${id}`,form)
   };
 
   deleteOneProduct(id:string):Observable<productList>{
     return this.http.delete<productList>(`${this.urlAPI}delete/product/${id}`)
   };
-  deleteAllProduct():Observable<productList>{
-    return this.http.delete<productList>(`${this.urlAPI}deleteAll/product`)
-  };
+ 
    
- showMore(id:string){
-  let showdata = [];
-  this.getOneProduct(id).subscribe(data=>{
-    showdata = data;
-    return showdata;
-  })
- }
 
 }

@@ -21,17 +21,16 @@ token?:any;
   // Establecer cookie
   setToken(Token:any) {
     this.token = Token;
-                    // nombre, dato aguardar , expiracion 24hs
-     this.cookies.set("token", Token , 1,'/');
+                    // nombre, dato aguardar , expiracion 1 = 24hs
+     this.cookies.set('token', Token , 1,'/');
     return this.router.navigate(['list'])
   }
   // Obtener cookie
   getToken() {
-    return this.cookies.get("token")
+    return this.cookies.get('token')
   }
   logOut(){
-
-    this.cookies.delete("token");
+    this.cookies.delete('token');
     window.location.reload();    
       }
   }
