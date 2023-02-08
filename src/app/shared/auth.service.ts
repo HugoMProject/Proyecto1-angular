@@ -30,7 +30,7 @@ token?:any;
     return this.cookies.get('token')
   }
   logOut(){
-    this.cookies.delete('token');
+    this.cookies.deleteAll("{name:'token'; dominio:'https://hugomproject.github.io/Proyecto1-angular/'}");
     window.location.reload();    
       }
   }

@@ -30,6 +30,14 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['add'])
   }
 
-
+  returnHome(){
+    var result = window.confirm('Estas seguro que quieres salir?...');
+    if (result === true) {
+      //si acepta usamos la funcion para eliminar la cookie de session y lo reedirigimos al 
+      //la vista de login 
+      this._authservice.logOut();
+      window.location.href='https://ecommerce-node.up.railway.app/';
+    }
+  }
 
 }
